@@ -1,4 +1,4 @@
-# Terraform Fundigic
+# Terraform Cloudflare
 
 ## Install Terraform on OSX
 ```bash
