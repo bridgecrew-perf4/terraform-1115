@@ -65,9 +65,9 @@ cf-terraforming -t $TF_VAR_CLOUDFLARE_TOKEN --account $CLOUDFLARE_ACCOUNT_ID rec
 cf-terraforming -t $TF_VAR_CLOUDFLARE_TOKEN --account $CLOUDFLARE_ACCOUNT_ID record --tfstate > terraform.tfstate
 ```
 
-#### Sync your code with your remote settings
+### Sync your code with your remote settings
 
-### Create state file
+#### Create state file
 
 CF-Terraforming allow to download `resource` settings and `state` files.
 But according to [this](https://developers.cloudflare.com/terraform/advanced-topics/importing-cloudflare-resources]) manual
@@ -85,7 +85,7 @@ So first generate temporary `tf` file for `record` resources and `zone` (not man
   cf-terraforming --email $TF_VAR_CLOUDFLARE_EMAIL --key $TF_VAR_CLOUDFLARE_KEY --account $TF_VAR_CLOUDFLARE_ACCOUNT_ID record -z example.com > record_example.com.tf
   ```
 
-### Setting Zone
+#### Setting Zone
 ```
  resource "cloudflare_record" "A_localhost_example_com_fbd25d2b041a99dfef1156779429419b" {
      zone_id = "d64be27fdef2d961c3d4b1173dbb1fd3"
@@ -106,7 +106,7 @@ The above zone scratch shows the zone id and record id which can be found here:
 Generating `state` file with current (remote) data with this script is done by using those
 information like so
 
-#### - starting from zone
+##### - starting from zone
 
 ```bash
 terraform import -var-file=domains/example_com.tfvars module.dns.cloudflare_zone.dns_domain d64be27fdef2d961c3d4b1173dbb1fd3
@@ -114,7 +114,7 @@ terraform import -var-file=domains/example_com.tfvars module.dns.cloudflare_zone
 
 New file `terraform.tfstate` will appear with **zone** dict.
 
-#### - proceeding with record
+##### - proceeding with record
 
 Here we need to obtain record IDs. To do that extraction of IDs from record
 file is needed. Make use of `grep` and `while` loop to run command on all 
