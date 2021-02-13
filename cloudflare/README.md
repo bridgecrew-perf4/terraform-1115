@@ -60,7 +60,7 @@ GO111MODULE=on go get -u github.com/cloudflare/cf-terraforming/...
 cf-terraforming -t $TF_VAR_CLOUDFLARE_TOKEN --account $CLOUDFLARE_ACCOUNT_ID record > records.tf
 ```
 
-### Download record resources state
+#### Download record resources state
 ```bash
 cf-terraforming -t $TF_VAR_CLOUDFLARE_TOKEN --account $CLOUDFLARE_ACCOUNT_ID record --tfstate > terraform.tfstate
 ```
