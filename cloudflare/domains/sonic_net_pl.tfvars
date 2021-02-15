@@ -70,14 +70,14 @@ records = {
     type = "TXT"
     ttl = "1"
     proxied = "false"
-    value = "v=spf1 a mx a:s6.linuxpl.com ipv4:88.198.23.35 ip4:109.199.70.95 ip4:46.248.186.213 ip4:46.248.186.212 include:_spf.google.com ~all" 
+    value = "google-site-verification=70lZ2iHYCcE8FUhtIFCNcSwDfTjOYQpFvk8wjL6CC5U"
   },
   10 = {
     name = "sonic.net.pl"
     type = "TXT"
     ttl = "1"
     proxied = "false"
-    value = "google-site-verification=70lZ2iHYCcE8FUhtIFCNcSwDfTjOYQpFvk8wjL6CC5U"
+    value = "v=spf1 a mx a:s6.linuxpl.com ipv4:88.198.23.35 ip4:109.199.70.95 ip4:46.248.186.213 ip4:46.248.186.212 include:_spf.google.com ~all" 
   },
   11 = {
     name = "x._domainkey"
