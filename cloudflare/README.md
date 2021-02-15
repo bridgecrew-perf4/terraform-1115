@@ -124,7 +124,7 @@ file is needed. Make use of `grep` and `while` loop to run command on all
 # for zone
 terraform import -var-file=domains/example_com.tfvars module.dns.cloudflare_zone.dns_domain d64be27fdef2d961c3d4b1173dbb1fd3
 # for records
-i=0; while read r; do terraform import -var-file=domains/example_com.tfvars module.dns.cloudflare_record.dns_record[${i}] d64be27fdef2d961c3d4b1173dbb1fd3/${r} ;i=$((i+1)); done < <(grep -E 'resource' record_example.com.tf | grep -oE '[a-f0-9]{32}')
+i=0; while read r; do terraform import -var-file=domains/example_com.tfvars module.dns.cloudflare_record.dns_record[\"${i}\"] d64be27fdef2d961c3d4b1173dbb1fd3/${r} ;i=$((i+1)); done < <(grep -E 'resource' record_example.com.tf | grep -oE '[a-f0-9]{32}')
 ```
 And like that we will have full, actual `.tfstate` file. After running `plan` and there will be information that resources will be removed and added again it's because
 `index_key` is set to `int` but loop in terraform config makes values of that key a string.
