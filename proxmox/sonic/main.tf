@@ -22,8 +22,6 @@ resource "proxmox_vm_qemu" "cloudinit" {
     bridge  = "prod"
   }
   ipconfig0               = "ip=${each.value.ip}/24,gw=10.0.10.254"
-  searchdomain            = "sonic"
-  nameserver              = "1.1.1.1"
   cicustom                = "user=local:snippets/user_data_vm-${each.key}.yml"
   cloudinit_cdrom_storage = "local"
 }

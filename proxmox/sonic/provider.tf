@@ -19,11 +19,11 @@ provider "proxmox" {
   pm_api_token_secret = var.TF_PROXMOX_API_SECRET
   pm_api_url          = var.PROXMOX_URL
   pm_tls_insecure     = "true"
-  # pm_log_enable = true
-  # pm_log_file = "terraform-plugin-proxmox.log"
-  # pm_debug = true
+  # pm_log_enable       = true
+  # pm_log_file         = "terraform-plugin-proxmox.log"
+  # pm_debug            = true
   # pm_log_levels = {
-  #   _default = "debug"
+  #   _default    = "debug"
   #   _capturelog = ""
   # }
 }
